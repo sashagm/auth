@@ -1,0 +1,46 @@
+{
+    "name": "sashagm/auth",
+    "description": "Laravel auth from Loong and Blood and Soul.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sashagm",
+            "email": "example@example.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Sashagm\\Auth\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "Sashagm\\Auth\\Tests\\": "tests/"
+        }
+      },
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "require-dev": {
+      "phpunit/phpunit": "^9.5.8",
+      "orchestra/testbench": "^7.5"
+
+  },
+    "extra": {
+        "laravel": {
+          "providers": [
+            "Sashagm\\Auth\\Providers\\AuthServiceProvider"
+          ]
+        }
+      },
+      "scripts": {
+        "test": [
+          "vendor/bin/phpunit"
+      ],
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
+    }      
+}
